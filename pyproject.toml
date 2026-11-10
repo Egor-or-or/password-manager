@@ -1,0 +1,29 @@
+[project]
+name = "password-manager"
+version = "0.1.0"
+description = "Консольный менеджер паролей"
+readme = "README.md"
+requires-python = ">=3.15"
+dependencies = [
+    "cryptography>=46.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.0",
+    "pytest>=9.2.0",
+    "ruff>=0.14.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
+files = ["password_manager", "tests"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
